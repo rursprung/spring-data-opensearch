@@ -6,6 +6,8 @@
 package org.opensearch.data.example.service;
 
 import java.math.BigDecimal;
+import java.util.Map;
+
 import org.opensearch.data.example.model.Product;
 import org.opensearch.data.example.repository.MarketplaceRepository;
 import org.springframework.beans.factory.InitializingBean;
@@ -28,7 +30,8 @@ public class MarketplaceInitializer implements InitializingBean {
                 2,
                 "These professionally finished pillows, with high thread counts, provide great comfort against your skin along with added durability "
                         + "that easily resists wear and tear to ensure a finished look for your bedroom.",
-                "Utopia Bedding"));
+                "Utopia Bedding",
+                Map.of("AA.BB", "1")));
 
         repository.save(new Product(
                 "2",
@@ -36,6 +39,7 @@ public class MarketplaceInitializer implements InitializingBean {
                 new BigDecimal(34.99),
                 10,
                 "Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small spaces.",
-                "Amazon"));
+                "Amazon",
+                Map.of("BB.AA", "2")));
     }
 }
